@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>FVP</title>
+  <title>Wow: Harnessing Intuitive Physics from a Scalable Embodied World Model</title>
   <link rel="icon" href="./figs/logo.jpg" type="image/png">
-  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,12 +12,11 @@
     <hr>
     <ul>
       <li><a href="#abstract">Abstract</a></li>
-      <li><a href="#deploy-in-real">Real-world Demo</a></li>
-      <li><a href="#approach">Approach</a></li>
-      <li><a href="#approach">Real-World Results</a></li>
-      <li><a href="#approach">Visualizing the Diffusion Process of Dexterous Hand Tasks</a></li>
-      <li><a href="#approach">Enhancing Effect of FVP on VLA Model Tasks</a></li>
-      <!-- <li class="toc-subsection"><a href="#training-in-sim">Training in Sim</a></li> -->
+      <li><a href="#physics-understanding">Physics Understanding</a></li>
+      <li><a href="#robot-manipulation">Robot Manipulation</a></li>
+      <li><a href="#real-world-scenarios">Real-world Scenarios</a></li>
+      <li><a href="#artistic-interaction">Artistic Interaction</a></li>
+      <li><a href="#approach">Experimental Results</a></li>
     </ul>
   </div>
 
@@ -61,139 +59,158 @@
         <sup>2</sup> State Key Laboratory of Multimedia Information Processing, School of Computer Science, Peking University &nbsp;
         <sup>3</sup> Hong Kong University of Science and Technology
       </span>
-      <br>
-      <!-- <div class="affiliation" style="text-align: center; margin-bottom: 10px; margin-top: -10px;">
-        Submitted to ICLR 2026
-      </div> -->
     </div>
-
-
-
-
-
-    <!-- use the video ./figs/videomimic_teaser.mp4 -->
-    <!-- <video id="teaser-video" src="./static/videos/dp4.mp4" width="100%" height="100%" controls muted playsinline autoplay></video>
-    <p class="figure-caption">
-      <span style="font-variant: small-caps;">FVP</span> is a novel 3D point cloud representation learning pipeline for robotic manipulation.
-  </p> -->
 
     <div class="links-block">
-      <a href="https://arxiv.org/pdf/2508.17230" target="_blank">[<strong>pdf</strong>]</a>
-      <a href="https://arxiv.org/abs/2508.17230" target="_blank">[<strong>arxiv</strong>]</a>
-      <a href="https://github.com/JackHck/FVP" target="_blank">[<strong>code</strong>]</a>
+      <a href="#" target="_blank">[<strong>pdf</strong>]</a>
+      <a href="#" target="_blank">[<strong>arxiv</strong>]</a>
+      <a href="#" target="_blank">[<strong>code</strong>]</a>
     </div>
 
+    <div class="tagline" id="abstract">Abstract.</div>
+
+    <img src="./figs/teaser.png"></img>
+    <p class="figure-caption">
+        <b>Wow world model</b> generates high-quality, physically consistent robot action videos in Out-of-Distribution (OOD) scenarios, enabling closed-loop corrections and real-world robotic execution. The illustration shows the model's strong generalization across diverse tasks and environments.
+    </p>
+
+    <div class="section">
+      <p style="text-align: justify;">
+        World models have recently emerged as a powerful paradigm for robotics, integrating perception, action, and reasoning. However, most existing world models focus on narrow domains or rely heavily on simulation, limiting their ability to generalize to real-world embodied interaction. We introduce <b>Wow</b> (Harnessing Intuitive Physics from a Scalable Embodied World Model), a large-scale 
+        embodied world model designed to capture intuitive physics and enable scalable robot learning. 
+        Wow unifies multimodal inputs from diverse real and simulated datasets, and leverages embodied interaction to learn dynamics that transfer robustly across environments and robot platforms. 
+        Across extensive experiments, Wow demonstrates strong generalization in manipulation and long-horizon planning, 
+        enabling closed-loop control and real-world deployment. Our results highlight that embodied interaction and 
+        large-scale training are critical to building world-omniscient models for robotics. 
+      </p>
+    </div>
+
+    <div class="tagline" id="physics-understanding">Physics Understanding.</div>
     
-  <div class="tagline" id="abstract">Abstract.</div>
-
-  <img src="./figs/teaser.png"></img>
-  <!-- Caption for Figure 1 (Teaser Video) -->
-  <p class="figure-caption">
-      <b>Wow world model</b> generates high-quality, physically consistent robot action videos in Out-of-Distribution (OOD) scenarios, enabling closed-loop corrections and real-world robotic execution. The illustration shows the model's strong generalization across diverse tasks and environments.
-  </p>
-
-  <div class="section">
-    <p>
-      World models have recently emerged as a powerful paradigm for robotics, integrating perception, action, and reasoning. 
-      However, most existing world models focus on narrow domains or rely heavily on simulation, limiting their ability to 
-      generalize to real-world embodied interaction. 
-    </p>
-    <p>
-      We introduce <b>Wow</b> (Harnessing Intuitive Physics from a Scalable Embodied World Model), a large-scale 
-      embodied world model designed to capture intuitive physics and enable scalable robot learning. 
-      Wow unifies multimodal inputs from diverse real and simulated datasets, and leverages embodied interaction to 
-      learn dynamics that transfer robustly across environments and robot platforms. 
-    </p>
-    <p>
-      Across extensive experiments, Wow demonstrates strong generalization in manipulation and long-horizon planning, 
-      enabling closed-loop control and real-world deployment. Our results highlight that embodied interaction and 
-      large-scale training are critical to building world-omniscient models for robotics. 
-    </p>
-  </div>
-
-    <div class="tagline" id="deploy-in-real">Real-world Demo.</div>
-
-    <!-- Video Gallery Section - STAIRS VIDEOS -->
-    <div class="video-gallery-section" id="stairsGallerySection">
+    <!-- Physics Videos Gallery -->
+    <div class="video-gallery-section" id="physicsGallerySection">
       <div class="video-gallery-container">
-        <div class="video-gallery" id="videoGalleryStairs">
-          <!-- Videos remain here - ADD autoplay -->
-          <img class="gallery-video" src="./static/images/head.jpg" autoplay muted playsinline loop></img>
-          <video class="gallery-video" src="./static/videos/artimanip.mp4" autoplay muted playsinline loop></video>
-          <video class="gallery-video" src="./static/videos/assembly.mp4" autoplay muted playsinline loop></video>
-          <video class="gallery-video" src="./static/videos/chicken.mp4" autoplay muted playsinline loop></video>
-          <video class="gallery-video" src="./static/videos/flipcup.mp4" autoplay muted playsinline loop></video>
-          <!-- Add more videos as needed, ensuring they have autoplay muted loop -->
+        <div class="video-gallery" id="videoGalleryPhysics">
+          <video class="gallery-video" src="./static/wow-videos/physics/cube_splitting.mp4" autoplay muted playsinline loop></video>
+          <video class="gallery-video" src="./static/wow-videos/physics/light.mp4" autoplay muted playsinline loop></video>
+          <video class="gallery-video" src="./static/wow-videos/physics/sticky_cube.mp4" autoplay muted playsinline loop></video>
+          <video class="gallery-video" src="./static/wow-videos/physics/three_cubes_fire_soft_water.mp4" autoplay muted playsinline loop></video>
+          <video class="gallery-video" src="./static/wow-videos/physics/crush_rabbit.mp4" autoplay muted playsinline loop></video>
+          <video class="gallery-video" src="./static/wow-videos/physics/counterfact_task1_part1.mp4" autoplay muted playsinline loop></video>
+          <video class="gallery-video" src="./static/wow-videos/physics/counterfact_task1_part3.mp4" autoplay muted playsinline loop></video>
+          <video class="gallery-video" src="./static/wow-videos/physics/cube_flower.mp4" autoplay muted playsinline loop></video>
+          <video class="gallery-video" src="./static/wow-videos/physics/cube_splitting2.mp4" autoplay muted playsinline loop></video>
         </div>
       </div>
-      <!-- Container for the caption AND buttons -->
       <div class="gallery-caption-container">
-          <!-- Move button controls INSIDE caption container -->
-          <div class="gallery-nav-controls">
-              <button class="gallery-nav left" id="scrollLeftBtnStairs">&lt;</button>
-              <button class="gallery-nav right" id="scrollRightBtnStairs">&gt;</button>
-          </div>
-          <!-- Caption text -->
-          <p class="figure-caption gallery-caption">
-              <b>UR5 Dexterous Hand:</b> UR5 single-arm is equipped with a LeapHand dexterous hand to complete four tasks: PickPlace, FlipCup, Assembly, Artimanip.
-          </p>
-      </div>
-    </div>
-  <!-- End Video Gallery Section -->
-
-  <!-- Video Gallery Section - SITTING VIDEOS -->
-  <div class="video-gallery-section" id="gallery-section-anchor">
-    <div class="video-gallery-container">
-      <div class="video-gallery" id="videoGallerySitting">
-        <!-- Videos remain here - ADD autoplay -->
-        <img class="gallery-video" src="./static/images/dual.jpg" autoplay muted playsinline loop></img>
-        <video class="gallery-video" src="./static/videos/dual_fruit.mp4" autoplay muted playsinline loop></video>
-        <video class="gallery-video" src="./static/videos/dual_cup.mp4" autoplay muted playsinline loop></video>
-        <video class="gallery-video" src="./static/videos/dual_wish.mp4" autoplay muted playsinline loop></video>
-        <!-- Add more videos as needed, ensuring they have autoplay muted loop -->
-      </div>
-    </div>
-    <!-- Container for the caption AND buttons -->
-    <div class="gallery-caption-container">
-        <!-- Move button controls INSIDE caption container -->
         <div class="gallery-nav-controls">
-            <button class="gallery-nav left" id="scrollLeftBtnSitting">&lt;</button>
-            <button class="gallery-nav right" id="scrollRightBtnSitting">&gt;</button>
+          <button class="gallery-nav left" id="scrollLeftBtnPhysics">&lt;</button>
+          <button class="gallery-nav right" id="scrollRightBtnPhysics">&gt;</button>
         </div>
-        <!-- Caption text -->
         <p class="figure-caption gallery-caption">
-            <b>AgileX Dual-arm:</b> We use the AgileX Cobot Magic dual-arm robot to perform the three manipulation tasks: PutBox, StackBowl, WipePlate.
+          <b>Physics Understanding:</b> Wow demonstrates sophisticated understanding of physical properties including object splitting, deformation, lighting effects, adhesion, and counterfactual reasoning.
         </p>
+      </div>
+    </div>
+
+    <div class="tagline" id="robot-manipulation">Robot Manipulation.</div>
+        
+        <!-- Robot Manipulation Videos Gallery -->
+        <div class="video-gallery-section" id="robotsGallerySection">
+          <div class="video-gallery-container">
+            <div class="video-gallery" id="videoGalleryRobots">
+              <video class="gallery-video" src="./static/wow-videos/robots/00000002-manipulate_cubes.mp4" autoplay muted playsinline loop></video>
+              <video class="gallery-video" src="./static/wow-videos/robots/00000056-manipulate_rope.mp4" autoplay muted playsinline loop></video>
+              <video class="gallery-video" src="./static/wow-videos/robots/00000072-manipulate_scissors.mp4" autoplay muted playsinline loop></video>
+              <video class="gallery-video" src="./static/wow-videos/robots/kitchen3.mp4" autoplay muted playsinline loop></video>
+              <video class="gallery-video" src="./static/wow-videos/robots/00000225-manipulate_rope.mp4" autoplay muted playsinline loop></video>
+              <video class="gallery-video" src="./static/wow-videos/robots/00000244-manipulate_clothes.mp4" autoplay muted playsinline loop></video>
+              <video class="gallery-video" src="./static/wow-videos/robots/if_cabinet_open1.mp4" autoplay muted playsinline loop></video>
+              <video class="gallery-video" src="./static/wow-videos/robots/cutting.mp4" autoplay muted playsinline loop></video>
+              <video class="gallery-video" src="./static/wow-videos/robots/Clear_the_desk_except_for_the_blue_items.mp4" autoplay muted playsinline loop></video>
+              <video class="gallery-video" src="./static/wow-videos/robots/if_cabinet_open2.mp4" autoplay muted playsinline loop></video>
+              <video class="gallery-video" src="./static/wow-videos/robots/stack_cups_long-term.mp4" autoplay muted playsinline loop></video>
+              <video class="gallery-video" src="./static/wow-videos/robots/stack_cups2_long-term.mp4" autoplay muted playsinline loop></video>
+            </div>
+          </div>
+          <div class="gallery-caption-container">
+            <div class="gallery-nav-controls">
+              <button class="gallery-nav left" id="scrollLeftBtnRobots">&lt;</button>
+              <button class="gallery-nav right" id="scrollRightBtnRobots">&gt;</button>
+            </div>
+            <p class="figure-caption gallery-caption">
+              <b>Robot Manipulation:</b> Diverse manipulation tasks including cube stacking, rope and cloth handling, kitchen operations, conditional reasoning tasks, object cutting, desk organization, and long-horizon planning scenarios.
+            </p>
+          </div>
+        </div>
+
+        <div class="tagline" id="real-world-scenarios">Real-world Scenarios.</div>
+        
+        <!-- Kitchen and Conditional Reasoning Videos -->
+        <div class="video-gallery-section" id="scenariosGallerySection">
+          <div class="video-gallery-container">
+            <div class="video-gallery" id="videoGalleryScenarios">
+              <video class="gallery-video" src="./static/wow-videos/robots/kitchen2.mp4" autoplay muted playsinline loop></video>
+              <video class="gallery-video" src="./static/wow-videos/robots/jobs2.mp4" autoplay muted playsinline loop></video>
+              <video class="gallery-video" src="./static/wow-videos/life/pour2.mp4" autoplay muted playsinline loop></video>
+              <video class="gallery-video" src="./static/wow-videos/life/wujing.mp4" autoplay muted playsinline loop></video>
+            </div>
+          </div>
+          <div class="gallery-caption-container">
+            <div class="gallery-nav-controls">
+              <button class="gallery-nav left" id="scrollLeftBtnScenarios">&lt;</button>
+              <button class="gallery-nav right" id="scrollRightBtnScenarios">&gt;</button>
+            </div>
+            <p class="figure-caption gallery-caption">
+              <b>Real-world Scenarios:</b> Natural environments and daily life activities including kitchen scenes, workplace tasks, and everyday interactions demonstrating practical applicability.
+            </p>
+          </div>
+        </div>
+
+
+    <!-- Cubes Showcase Grid -->
+    <div class="tagline">Object Interactions and Dynamics.</div>
+    <div class="video-grid-container">
+      <div class="video-grid">
+        <video class="grid-video" src="./static/wow-videos/cubes/00000023.mp4" autoplay muted playsinline loop></video>
+        <video class="grid-video" src="./static/wow-videos/cubes/00000034.mp4" autoplay muted playsinline loop></video>
+        <video class="grid-video" src="./static/wow-videos/cubes/00000048.mp4" autoplay muted playsinline loop></video>
+        <video class="grid-video" src="./static/wow-videos/cubes/00000071.mp4" autoplay muted playsinline loop></video>
+        <video class="grid-video" src="./static/wow-videos/cubes/00000082.mp4" autoplay muted playsinline loop></video>
+        <video class="grid-video" src="./static/wow-videos/cubes/00000095.mp4" autoplay muted playsinline loop></video>
+        <video class="grid-video" src="./static/wow-videos/cubes/00000099.mp4" autoplay muted playsinline loop></video>
+        <video class="grid-video" src="./static/wow-videos/cubes/00000106.mp4" autoplay muted playsinline loop></video>
+        <video class="grid-video" src="./static/wow-videos/cubes/00000123.mp4" autoplay muted playsinline loop></video>
+        <video class="grid-video" src="./static/wow-videos/cubes/00000143.mp4" autoplay muted playsinline loop></video>
+        <video class="grid-video" src="./static/wow-videos/cubes/00000150.mp4" autoplay muted playsinline loop></video>
+        <video class="grid-video" src="./static/wow-videos/cubes/00000158.mp4" autoplay muted playsinline loop></video>
+      </div>
+    </div>
+    <p class="figure-caption">
+      <b>Object Dynamics:</b> A diverse collection of cube interactions showcasing different physical behaviors, collision dynamics, and environmental responses.
+    </p>
+
+    <div class="tagline" id="artistic-interaction">Artistic Interaction.</div>
+
+  <!-- Artistic Videos -->
+  <div class="video-gallery-section" id="artGallerySection">
+    <div class="video-gallery-container">
+      <div class="video-gallery" id="videoGalleryArt">
+        <video class="gallery-video" src="./static/wow-videos/art/Sunflower.mp4" autoplay muted playsinline loop></video>
+        <video class="gallery-video" src="./static/wow-videos/art/van_Gogh.mp4" autoplay muted playsinline loop></video>
+      </div>
+    </div>
+    <div class="gallery-caption-container">
+      <div class="gallery-nav-controls">
+        <button class="gallery-nav left" id="scrollLeftBtnArt">&lt;</button>
+        <button class="gallery-nav right" id="scrollRightBtnArt">&gt;</button>
+      </div>
+      <p class="figure-caption gallery-caption">
+        <b>Artistic Interaction:</b> Wow demonstrates understanding of 2D-3D relationships by enabling robotic hands to extract objects from famous paintings, showcasing cross-modal reasoning between visual art and physical manipulation.
+      </p>
     </div>
   </div>
-  <!-- End Video Gallery Section -->
 
-  <!-- Video Gallery Section - TRAVERSING VIDEOS -->
-    <div class="video-gallery-section" id="traversingGallerySection">
-      <div class="video-gallery-container">
-        <div class="video-gallery" id="videoGalleryTraversing">
-          <!-- Videos remain here - ADD autoplay -->
-          <img class="gallery-video" src="./static/images/human.jpg" autoplay muted playsinline loop></img>
-          <video class="gallery-video" src="./static/videos/closedrawer.mp4" autoplay muted playsinline loop></video>
-          <video class="gallery-video" src="./static/videos/bread.mp4" autoplay muted playsinline loop></video>
-          <video class="gallery-video" src="./static/videos/closeclip.mp4" autoplay muted playsinline loop></video>
-          <!-- Add more videos as needed, ensuring they have autoplay muted loop -->
-        </div>
-      </div>
-      <!-- Container for the caption AND buttons -->
-      <div class="gallery-caption-container">
-          <!-- Move button controls INSIDE caption container -->
-          <div class="gallery-nav-controls">
-              <button class="gallery-nav left" id="scrollLeftBtnTraversing">&lt;</button>
-              <button class="gallery-nav right" id="scrollRightBtnTraversing">&gt;</button>
-          </div>
-          <!-- Caption text -->
-          <p class="figure-caption gallery-caption">
-              <b>TianGong Humanoid:</b> We use the TianGong humanoid robot, equipped with built-in cameras and a 30-DoF upper body, to perform three real-world tasks: PushDraw, ToastBread, CloseLid.
-          </p>
-      </div>
-    </div>
-  <!-- End Video Gallery Section -->
     <div class="tagline" id="approach">Approach.</div>
 
     <div class="r2s-vertical-layout">
@@ -208,236 +225,83 @@
       </p>
     </div>
 
-    <div class="tagline" id="approach">Real-World Results.</div>
+  <div class="tagline" id="approach">Experimental Results.</div>
 
-    <div class="r2s-vertical-layout">
-      <div class="r2s-video-row r2s-top-row">
-        <img class="r2s-video-item r2s-video-input" src="./static/images/realworld.png" autoplay muted loop playsinline></img>
-      </div>
-      <p class="figure-caption">
-        <b>"DP3+FVP" and "RISE+FVP" denote the application of FVP to pretrain the visual models from DP3 and RISE,
-          respectively. "DP3" indicates that the visual model within DP3 has not undergone pretraining. "DP3+PointMAE", "DP3+STRL", and
-   "DP3+C2P" signify the utilization of PointMAE, STRL, and C2P to pre-train the visual model from DP3. The numbers before the comma
-   represent the performance using in-domain datasets for pre-training, while the numbers after the comma represent the performance using
-   out-of-domain datasets (RoboMind) for pre-training.</b>
-      </p>
+  <div class="r2s-vertical-layout">
+    <div class="r2s-video-row r2s-top-row">
+      <img class="r2s-video-item r2s-video-input" src="./static/images/1_Table.png"></img>
     </div>
-
-    <div class="tagline" id="approach">Visualizing the Diffusion Process of Dexterous Hand Tasks.</div>
-    <!-- Row 1 -->
-    <div class="video-gallery-container">
-      <div class="video-gallery" id="videoGallerySitting">
-          <video class="gallery-video" src="./static/gif/output/chicken5.mp4" autoplay muted playsinline loop></video>
-          <video class="gallery-video" src="./static/gif/output/chicken20.mp4" autoplay muted playsinline loop></video>
-          <video class="gallery-video" src="./static/gif/output/chicken110.mp4" autoplay muted playsinline loop></video>
-      </div>
+    <div class="r2s-caption-row">
+      <p class="r2s-caption-item"><b>Scaling Law Comparison at Varying Data Scales.</b> Performance comparison across four different dataset sizes (30k, 200k, 600k, 2M samples) on multiple benchmarks, demonstrating clear improvements with increased training data following established neural scaling laws.</p>
     </div>
-
-    <!-- Row 2 -->
-    <div class="video-gallery-container">
-      <div class="video-gallery" id="videoGallerySitting">
-          <video class="gallery-video" src="./static/gif/output/cap5.mp4" autoplay muted playsinline loop></video>
-          <video class="gallery-video" src="./static/gif/output/cap20.mp4" autoplay muted playsinline loop></video>
-          <video class="gallery-video" src="./static/gif/output/cap105.mp4" autoplay muted playsinline loop></video>
-      </div>
-    </div>
-
-    <!-- Row 3 -->
-    <div class="video-gallery-container">
-      <div class="video-gallery" id="videoGallerySitting">
-          <video class="gallery-video" src="./static/gif/output/assembly5.mp4" autoplay muted playsinline loop></video>
-          <video class="gallery-video" src="./static/gif/output/assembly35.mp4" autoplay muted playsinline loop></video>
-          <video class="gallery-video" src="./static/gif/output/assembly65.mp4" autoplay muted playsinline loop></video>
-      </div>
-    </div>
-
-    <!-- Row 4 -->
-    <div class="video-gallery-container">
-      <div class="video-gallery" id="videoGallerySitting">
-          <video class="gallery-video" src="./static/gif/output/articulate5.mp4" autoplay muted playsinline loop></video>
-          <video class="gallery-video" src="./static/gif/output/articulate35.mp4" autoplay muted playsinline loop></video>
-          <video class="gallery-video" src="./static/gif/output/articulate65.mp4" autoplay muted playsinline loop></video>
-      </div>
-    </div>
-    
-    <div class="tagline" id="approach">Enhancing Effect of FVP on VLA Model Tasks.</div>
-
-    <!-- Task 1 -->
-    <div class="video-gallery-container">
-      <h2 class="video-gallery-title">PutBox</h2>
-      <div class="video-gallery" id="videoGallerySitting">
-        <div class="video-item">
-          <h3 class="video-title">RDT</h3>
-          <video class="gallery-video" src="./static/videos/dp_fr_1.mp4" autoplay muted loop playsinline></video>
-        </div>
-        <div style="width: 40px;"></div>
-        <div class="video-item">
-          <h3 class="video-title">RDT+FVP</h3>
-          <video class="gallery-video" src="./static/videos/dp_fr_2.mp4" autoplay muted loop playsinline></video>
-        </div>
-      </div>
-    </div>
-
-    <!-- Task 2 -->
-    <div class="video-gallery-container">
-      <h2 class="video-gallery-title">StackBowl</h2>
-      <div class="video-gallery" id="videoGallerySitting">
-        <div class="video-item">
-          <h3 class="video-title">RDT</h3>
-          <video class="gallery-video" src="./static/videos/dp_wp_1.mp4" autoplay muted loop playsinline></video>
-        </div>
-        <div style="width: 40px;"></div>
-        <div class="video-item">
-          <h3 class="video-title">RDT+FVP</h3>
-          <video class="gallery-video" src="./static/videos/dp_wp_2.mp4" autoplay muted loop playsinline></video>
-        </div>
-      </div>
-    </div>
-
-    <!-- Task 3 -->
-    <div class="video-gallery-container">
-      <h2 class="video-gallery-title">WipePlate</h2>
-      <div class="video-gallery" id="videoGallerySitting">
-        <div class="video-item">
-          <h3 class="video-title">RDT</h3>
-          <video class="gallery-video" src="./static/videos/dp_wh_1.mp4" autoplay muted loop playsinline></video>
-        </div>
-        <div style="width: 40px;"></div>
-        <div class="video-item">
-          <h3 class="video-title">RDT+FVP</h3>
-          <video class="gallery-video" src="./static/videos/dp_wh_2.mp4" autoplay muted loop playsinline></video>
-        </div>
-      </div>
-    </div>
-
-    <!-- Task 4 -->
-    <div class="video-gallery-container">
-      <h2 class="video-gallery-title">Long-horizon Task</h2>
-      <div class="video-gallery" id="videoGallerySitting">
-        <div class="video-item">
-          <h3 class="video-title">RDT</h3>
-          <video class="gallery-video" src="./static/videos/dp_lr_1.mp4" autoplay muted loop playsinline></video>
-        </div>
-        <div style="width: 40px;"></div>
-        <div class="video-item">
-          <h3 class="video-title">RDT+FVP</h3>
-          <video class="gallery-video" src="./static/videos/dp_lr_2.mp4" autoplay muted loop playsinline></video>
-        </div>
-      </div>
-    </div>
-
-  <div class="bibtex-code">
-    <div class="bibtex-title">BibTeX</div>
-    <pre><code>@article{chi2025wow,
-      author    = {Xiaowei Chi and Peidong Jia and Chun-Kai Fan and Xiaozhu Ju and Weishi Mi and Kevin Zhang and Zhiyuan Qin and Wanxin Tian and Kuangzhi Ge and Hao Li and Zezhong Qian and Qiang Zhou and Anthony Chen and Yong Dai and Jiaming Liu and Ying Li and Qingpo Wuwu and Yong Bao and Qiuxuan Feng and Kai Tang and Chengyu Bai and Lizhang Chen and Yulin Luo and Yueru Jia and Siyuan Zhou and Chi-Min Chan and Chengkai Hou and Wei Xue and Sirui Han and Yike Guo and Jiacheng Zhu and Shanghang Zhang and Jian Tang},
-      title     = {Wow: Harnessing Intuitive Physics from a Scalable Embodied World Model},
-      journal   = {arXiv preprint arXiv:xxxx.xxxxx},
-      year      = {2025},
-    }</code></pre>
   </div>
-  </div> <!-- End of main-content div -->
 
+  <div class="r2s-vertical-layout">
+    <div class="r2s-video-row r2s-top-row">
+      <img class="r2s-video-item r2s-video-input" src="./static/images/2_Table.png" style="height: auto; max-height: none;"></img>
+    </div>
+    <div class="r2s-caption-row">
+      <p class="r2s-caption-item"><b>Comparative Analysis Across Video Generation Models.</b> Comprehensive evaluation of different models including CogVideoX, Cosmos-Predict, Wan2.1, and our proposed WoW across multiple metrics: Video Quality (VQ), Instruction Understanding (IU), Physical Law (PL), and Planning. Results show both human evaluation and autonomous evaluation scores, with WoW achieving superior performance across most dimensions.</p>
+    </div>
+  </div>
+
+  <style>
+  .r2s-video-item {
+    width: 100%;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain !important;
+  }
+  </style>
+
+    <div class="bibtex-code">
+      <div class="bibtex-title">BibTeX</div>
+      <pre><code>@article{chi2025wow,
+        author    = {Xiaowei Chi and Peidong Jia and Chun-Kai Fan and Xiaozhu Ju and Weishi Mi and Kevin Zhang and Zhiyuan Qin and Wanxin Tian and Kuangzhi Ge and Hao Li and Zezhong Qian and Qiang Zhou and Anthony Chen and Yong Dai and Jiaming Liu and Ying Li and Qingpo Wuwu and Yong Bao and Qiuxuan Feng and Kai Tang and Chengyu Bai and Lizhang Chen and Yulin Luo and Yueru Jia and Siyuan Zhou and Chi-Min Chan and Chengkai Hou and Wei Xue and Sirui Han and Yike Guo and Jiacheng Zhu and Shanghang Zhang and Jian Tang},
+        title     = {Wow: Harnessing Intuitive Physics from a Scalable Embodied World Model},
+        journal   = {arXiv preprint arXiv:xxxx.xxxxx},
+        year      = {2025},
+      }</code></pre>
+    </div>
+  </div>
 
   <div class="footer">
      © Shanghai Qi Zhi Institute | Webpage template from <a href="https://www.videomimic.net/">VideoMimic</a>.
   </div>
-
-  <!-- Teaser Video Autoplay with Delay and Loop -->
-  <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const video = document.getElementById('teaser-video');
-    // const initialDelay = 1000; // No longer needed, autoplay attribute handles initial play
-    const loopDelay = 3000;    // 3 seconds delay before looping
-
-    // let initialPlayTimeout; // No longer needed
-    let loopTimeout;
-
-    if (video) {
-      // Ensure video is muted (already in HTML, but good practice)
-      video.muted = true;
-      // Controls are already in HTML, ensuring user can play if autoplay fails
-
-      // REMOVE JavaScript-based initial play:
-      /*
-      initialPlayTimeout = setTimeout(function() {
-        video.play().then(function() {
-          // Autoplay started
-        }).catch(function(error) {
-          console.log('Initial autoplay prevented for teaser video. User interaction might be needed.', error);
-          video.controls = true; // Ensure controls are visible
-        });
-      }, initialDelay);
-      */
-
-      // Loop with delay - this part can stay
-      video.addEventListener('ended', function() {
-        clearTimeout(loopTimeout); 
-        loopTimeout = setTimeout(function() {
-          video.currentTime = 0; 
-          video.play().catch(function(error) {
-            console.log('Delayed loop play prevented for teaser video:', error);
-          });
-        }, loopDelay);
-      });
-
-      // --- Clear Timeouts on Manual Pause ---
-      video.addEventListener('pause', function() {
-        if (!video.ended && video.currentTime > 0) {
-           // clearTimeout(initialPlayTimeout); // No longer needed
-           clearTimeout(loopTimeout);
-           console.log('Teaser video: Manual pause detected, clearing loop timeout.');
-        }
-      });
-
-      // --- Clear Timeouts on Manual Play (if paused before initial delay finishes) ---
-       video.addEventListener('play', function() {
-           // if (initialPlayTimeout) { // No longer needed
-           //     clearTimeout(initialPlayTimeout);
-           // }
-       });
-
-    } else {
-      console.error('Video element with ID "teaser-video" not found.');
-    }
-  });
-  </script>
 
   <!-- JavaScript for Video Gallery Navigation -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const galleries = [
         {
-          sectionId: 'gallery-section-anchor', // ID of the .video-gallery-section for sitting
-          galleryInnerId: 'videoGallerySitting',
-          scrollLeftBtnId: 'scrollLeftBtnSitting',
-          scrollRightBtnId: 'scrollRightBtnSitting'
+          sectionId: 'physicsGallerySection',
+          galleryInnerId: 'videoGalleryPhysics',
+          scrollLeftBtnId: 'scrollLeftBtnPhysics',
+          scrollRightBtnId: 'scrollRightBtnPhysics'
         },
         {
-          sectionId: 'traversingGallerySection', // ID of the .video-gallery-section for traversing
-          galleryInnerId: 'videoGalleryTraversing',
-          scrollLeftBtnId: 'scrollLeftBtnTraversing',
-          scrollRightBtnId: 'scrollRightBtnTraversing'
+          sectionId: 'robotsGallerySection',
+          galleryInnerId: 'videoGalleryRobots',
+          scrollLeftBtnId: 'scrollLeftBtnRobots',
+          scrollRightBtnId: 'scrollRightBtnRobots'
         },
         {
-          sectionId: 'stairsGallerySection', // ID of the .video-gallery-section for stairs
-          galleryInnerId: 'videoGalleryStairs',
-          scrollLeftBtnId: 'scrollLeftBtnStairs',
-          scrollRightBtnId: 'scrollRightBtnStairs'
+          sectionId: 'scenariosGallerySection',
+          galleryInnerId: 'videoGalleryScenarios',
+          scrollLeftBtnId: 'scrollLeftBtnScenarios',
+          scrollRightBtnId: 'scrollRightBtnScenarios'
         },
         {
-          sectionId: 'reconstructionGallerySection', // ID of the .video-gallery-section for reconstruction
-          galleryInnerId: 'videoGalleryReconstruction',
-          scrollLeftBtnId: 'scrollLeftBtnReconstruction',
-          scrollRightBtnId: 'scrollRightBtnReconstruction'
+          sectionId: 'artGallerySection',
+          galleryInnerId: 'videoGalleryArt',
+          scrollLeftBtnId: 'scrollLeftBtnArt',
+          scrollRightBtnId: 'scrollRightBtnArt'
         }
       ];
 
       galleries.forEach(galleryConfig => {
         const gallerySection = document.getElementById(galleryConfig.sectionId);
-        if (!gallerySection) {
-          console.error(`Gallery section with ID ${galleryConfig.sectionId} not found.`);
-          return;
-        }
+        if (!gallerySection) return;
 
         const galleryContainer = gallerySection.querySelector('.video-gallery-container');
         const galleryInner = document.getElementById(galleryConfig.galleryInnerId);
@@ -445,117 +309,46 @@
         const scrollRightBtn = document.getElementById(galleryConfig.scrollRightBtnId);
 
         if (galleryContainer && galleryInner && scrollLeftBtn && scrollRightBtn) {
-          // Calculate the scroll amount based on the width of the first video + gap
-          const scrollAmount = (galleryInner.firstElementChild?.offsetWidth || 300) + 15; // 15 is the gap
+          const scrollAmount = (galleryInner.firstElementChild?.offsetWidth || 300) + 15;
 
           scrollLeftBtn.addEventListener('click', () => {
-            // Scroll the CONTAINER element
             galleryContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
           });
 
           scrollRightBtn.addEventListener('click', () => {
-            // Scroll the CONTAINER element
             galleryContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
           });
-
-          /* --- REMOVE OR COMMENT OUT HOVER LOGIC ---
-          // Optional: Add hover-to-play functionality for gallery videos
-          // Target videos within galleryInner
-          const galleryVideos = galleryInner.querySelectorAll('.gallery-video');
-          galleryVideos.forEach(video => {
-              video.addEventListener('mouseenter', () => {
-                  video.play().catch(e => console.log("Autoplay prevented:", e));
-              });
-              video.addEventListener('mouseleave', () => {
-                  video.pause();
-                  // video.currentTime = 0; // Optional: reset video on mouse leave
-              });
-          });
-          */ // --- END OF REMOVED HOVER LOGIC ---
-
-        } else {
-          console.error(`Gallery elements not found for navigation setup in section ${galleryConfig.sectionId}.`);
-          // Log which elements might be missing
-          if (!galleryContainer) console.error('Missing element: .video-gallery-container in section ' + galleryConfig.sectionId);
-          if (!galleryInner) console.error(`Missing element with ID ${galleryConfig.galleryInnerId}`);
-          if (!scrollLeftBtn) console.error(`Missing element with ID ${galleryConfig.scrollLeftBtnId}`);
-          if (!scrollRightBtn) console.error(`Missing element with ID ${galleryConfig.scrollRightBtnId}`);
         }
       });
     });
   </script>
 
-  <!-- JavaScript for Real-to-Sim Video Synchronization -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const videosToSync = [
-        document.querySelector('.r2s-video-input'),
-        document.querySelector('.r2s-video-smpl'),
-        document.querySelector('.r2s-video-g1'),
-        document.querySelector('.r2s-video-ego-rgb'),
-        document.querySelector('.r2s-video-ego-depth'),
-        document.querySelector('.r2s-video-sim')
-      ].filter(Boolean); // Filter out nulls if any class name is wrong or video missing
-
-      function synchronizeAndPlayR2SVideos() {
-        if (videosToSync.length === 0) {
-          console.warn('No videos found for Real-to-Sim synchronization.');
-          return;
-        }
-
-        const readyPromises = videosToSync.map(video => {
-          return new Promise((resolve, reject) => {
-            // If video is already ready (e.g., cached), resolve immediately
-            if (video.readyState >= 4) { // HAVE_ENOUGH_DATA (canplaythrough)
-              resolve();
-            } else {
-              video.addEventListener('canplaythrough', resolve, { once: true });
-              video.addEventListener('error', reject, { once: true }); // Handle potential loading errors
-            }
-          });
-        });
-
-        Promise.all(readyPromises)
-          .then(() => {
-            console.log('All Real-to-Sim videos are ready to play. Starting playback.');
-            videosToSync.forEach(video => {
-              video.currentTime = 0; // Ensure starting from the beginning
-              video.play().catch(error => {
-                console.warn(`Autoplay was prevented for video ${video.src}. User interaction might be needed.`, error);
-                // Ensure controls are visible if autoplay fails for any video
-                video.controls = true;
-              });
-            });
-          })
-          .catch(error => {
-            console.error('Error waiting for Real-to-Sim videos to be ready:', error);
-            // Optionally, provide a fallback or user message here
-            videosToSync.forEach(video => video.controls = true); // Show controls on all if any failed to load
-          });
+  <style>
+    .video-grid-container {
+      margin: 20px 0;
+    }
+    
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin: 20px 0;
+    }
+    
+    .grid-video {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    @media (max-width: 768px) {
+      .video-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 10px;
       }
-
-      synchronizeAndPlayR2SVideos();
-
-      // The `loop` attribute on the HTML video tags will handle continuous looping.
-      // The videos will naturally re-synchronize at their LCM due to the loop attribute
-      // if they have different durations and all successfully start.
-    });
-  </script>
-
-  <!-- JavaScript to prevent default click on specific image links -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const imageLinkIds = ['figure-1-img', 'figure-2-img', 'figure-3-img'];
-      imageLinkIds.forEach(id => {
-        const linkElement = document.getElementById(id);
-        if (linkElement) {
-          linkElement.addEventListener('click', function(event) {
-            event.preventDefault();
-          });
-        }
-      });
-    });
-  </script>
+    }
+  </style>
 
 </body>
 </html>
