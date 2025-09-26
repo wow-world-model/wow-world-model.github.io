@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Wow: Harnessing Intuitive Physics from a Scalable Embodied World Model</title>
+  <title>WoW: Towards a World-omniscient World-model Through Embodied Interaction</title>
   <link rel="icon" href="./figs/logo.png" type="image/png">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -98,12 +98,7 @@
 
     <div class="section">
       <p style="text-align: justify;">
-        World models have recently emerged as a powerful paradigm for robotics, integrating perception, action, and reasoning. However, most existing world models focus on narrow domains or rely heavily on simulation, limiting their ability to generalize to real-world embodied interaction. We introduce <b>Wow</b> (Harnessing Intuitive Physics from a Scalable Embodied World Model), a large-scale 
-        embodied world model designed to capture intuitive physics and enable scalable robot learning. 
-        Wow unifies multimodal inputs from diverse real and simulated datasets, and leverages embodied interaction to learn dynamics that transfer robustly across environments and robot platforms. 
-        Across extensive experiments, Wow demonstrates strong generalization in manipulation and long-horizon planning, 
-        enabling closed-loop control and real-world deployment. Our results highlight that embodied interaction and 
-        large-scale training are critical to building world-omniscient models for robotics. 
+      Humans develop an understanding of intuitive physics through active interaction with the world. In stark contrast, current video models such as <strong>Sora</strong> rely solely on passive observation and therefore struggle with grasping physical causality. This motivates our central hypothesis: <em>authentic physical intuition in a world model must be grounded in extensive, causally rich interactions with the real world</em>. To test this, we introduce <strong>WoW</strong>, a 14B-parameter generative world model trained on 2 million real-world robot interaction trajectories. We find that the model’s understanding of physics emerges as a probabilistic distribution of plausible outcomes, which can lead to stochastic instabilities and physical hallucinations. To mitigate these, we propose <em>SOPHIA</em>, a novel vision-language agent that evaluates the output of the DiT model and iteratively refines the language instructions to steer generation toward physical realism. Complementing this, a co-trained <em>Inverse Dynamics Model</em> translates refined plans into executable robotic actions, effectively closing the imagination-to-action loop. We further establish <strong>WoWBench</strong>, a new benchmark focused on physical consistency and causal reasoning in video, where WoW achieves state-of-the-art performance in both human and autonomous evaluations, excelling in physical causality, collision dynamics, and object permanence. Our work provides systematic evidence that large-scale, real-world interaction is essential for developing physical intuition in AI. 
       </p>
     </div>
 
