@@ -101,51 +101,44 @@
       Humans develop an understanding of intuitive physics through active interaction with the world. In stark contrast, current video models such as Sora rely solely on passive observation and therefore struggle with grasping physical causality. This motivates our central hypothesis: <em>authentic physical intuition in a world model must be grounded in extensive, causally rich interactions with the real world</em>. To test this, we introduce <strong>WoW</strong>, a 14B-parameter generative world model trained on 2 million real-world robot interaction trajectories. We find that the model’s understanding of physics emerges as a probabilistic distribution of plausible outcomes, which can lead to stochastic instabilities and physical hallucinations. To mitigate these, we propose <em>SOPHIA</em>, a novel vision-language agent that evaluates the output of the DiT model and iteratively refines the language instructions to steer generation toward physical realism. Complementing this, a co-trained <em>Inverse Dynamics Model</em> translates refined plans into executable robotic actions, effectively closing the imagination-to-action loop. We further establish <strong>WoWBench</strong>, a new benchmark focused on physical consistency and causal reasoning in video, where WoW achieves state-of-the-art performance in both human and autonomous evaluations, excelling in physical causality, collision dynamics, and object permanence. Our work provides systematic evidence that large-scale, real-world interaction is essential for developing physical intuition in AI. 
       </p>
     </div>
-
-    <div class="tagline" id="physics-understanding">Physics Understanding.</div>
     
-    <!-- Physics Videos Gallery -->
-    <div class="video-gallery-section" id="physicsGallerySection">
+    
+    
+    <!-- Kitchen and Conditional Reasoning Videos -->
+    <div class="tagline" id="real-world-scenarios">Real-world Scenarios.</div>
+    <div class="video-gallery-section" id="scenariosGallerySection">
       <div class="video-gallery-container">
-        <div class="video-gallery" id="videoGalleryPhysics">
-          <video class="gallery-video" src="./static/wow-videos/physics/cube_splitting.mp4" autoplay muted playsinline loop></video>
+        <div class="video-gallery" id="videoGalleryScenarios">
+          <video class="gallery-video" src="./static/wow-videos/robots/jobs2.mp4" autoplay muted playsinline loop></video>
           <video class="gallery-video" src="./static/wow-videos/physics/light.mp4" autoplay muted playsinline loop></video>
-          <video class="gallery-video" src="./static/wow-videos/physics/three_cubes_fire_soft_water.mp4" autoplay muted playsinline loop></video>
-          <video class="gallery-video" src="./static/wow-videos/physics/crush_rabbit.mp4" autoplay muted playsinline loop></video>
-          <video class="gallery-video" src="./static/wow-videos/physics/sticky_cube.mp4" autoplay muted playsinline loop></video>
-          <video class="gallery-video" src="./static/wow-videos/physics/counterfact_task1_part1.mp4" autoplay muted playsinline loop></video>
-          <video class="gallery-video" src="./static/wow-videos/physics/counterfact_task1_part3.mp4" autoplay muted playsinline loop></video>
-          <video class="gallery-video" src="./static/wow-videos/physics/cube_flower.mp4" autoplay muted playsinline loop></video>
-          <video class="gallery-video" src="./static/wow-videos/physics/cube_splitting2.mp4" autoplay muted playsinline loop></video>
+          <video class="gallery-video" src="./static/wow-videos/life/mask5.mp4" autoplay muted playsinline loop></video>
+          <video class="gallery-video" src="./static/wow-videos/life/tube.mp4" autoplay muted playsinline loop></video>
+          <!-- <video class="gallery-video" src="./static/wow-videos/robots/stack_cups2_long-term.mp4" autoplay muted playsinline loop></video> -->
+          <!-- <video class="gallery-video" src="./static/wow-videos/robots/00000244-manipulate_clothes.mp4" autoplay muted playsinline loop></video> -->
         </div>
       </div>
       <div class="gallery-caption-container">
         <div class="gallery-nav-controls">
-          <button class="gallery-nav left" id="scrollLeftBtnPhysics">&lt;</button>
-          <button class="gallery-nav right" id="scrollRightBtnPhysics">&gt;</button>
+          <button class="gallery-nav left" id="scrollLeftBtnScenarios">&lt;</button>
+          <button class="gallery-nav right" id="scrollRightBtnScenarios">&gt;</button>
         </div>
         <p class="figure-caption gallery-caption">
-          <b>Physics Understanding:</b> WoW demonstrates sophisticated understanding of physical properties including object splitting, deformation, lighting effects, adhesion, and counterfactual reasoning.
+          <b>Zero-shot daily Scenarios:</b> Natural environments and daily life activities including workplace tasks, and everyday interactions demonstrating practical applicability.
         </p>
       </div>
     </div>
-
+    
+    
+    <!-- Robot Manipulation Videos Gallery -->
     <div class="tagline" id="robot-manipulation">Robot Manipulation.</div>
-        
-        <!-- Robot Manipulation Videos Gallery -->
-        <div class="video-gallery-section" id="robotsGallerySection">
-          <div class="video-gallery-container">
-            <div class="video-gallery" id="videoGalleryRobots">
-              <video class="gallery-video" src="./static/wow-videos/robots/00000056-manipulate_rope.mp4" autoplay muted playsinline loop></video>
-              <video class="gallery-video" src="./static/wow-videos/robots/00000072-manipulate_scissors.mp4" autoplay muted playsinline loop></video>
+    <div class="video-gallery-section" id="robotsGallerySection">
+      <div class="video-gallery-container">
+        <div class="video-gallery" id="videoGalleryRobots">
+              <video class="gallery-video" src="./static/wow-videos/robots/kitchen2.mp4" autoplay muted playsinline loop></video>
+              <!-- <video class="gallery-video" src="./static/wow-videos/robots/00000056-manipulate_rope.mp4" autoplay muted playsinline loop></video> -->
               <video class="gallery-video" src="./static/wow-videos/robots/kitchen3.mp4" autoplay muted playsinline loop></video>
-              <video class="gallery-video" src="./static/wow-videos/robots/00000225-manipulate_rope.mp4" autoplay muted playsinline loop></video>
-              <video class="gallery-video" src="./static/wow-videos/robots/00000244-manipulate_clothes.mp4" autoplay muted playsinline loop></video>
-              <video class="gallery-video" src="./static/wow-videos/robots/if_cabinet_open1.mp4" autoplay muted playsinline loop></video>
-              <video class="gallery-video" src="./static/wow-videos/robots/cutting.mp4" autoplay muted playsinline loop></video>
-              <video class="gallery-video" src="./static/wow-videos/robots/Clear_the_desk_except_for_the_blue_items.mp4" autoplay muted playsinline loop></video>
-              <video class="gallery-video" src="./static/wow-videos/robots/if_cabinet_open2.mp4" autoplay muted playsinline loop></video>
-              <video class="gallery-video" src="./static/wow-videos/robots/stack_cups2_long-term.mp4" autoplay muted playsinline loop></video>
+              <video class="gallery-video" src="./static/wow-videos/robots/tiankunhello2.mp4" autoplay muted playsinline loop></video>
+              <!-- <video class="gallery-video" src="./static/wow-videos/robots/00000225-manipulate_rope.mp4" autoplay muted playsinline loop></video> -->
             </div>
           </div>
           <div class="gallery-caption-container">
@@ -154,115 +147,138 @@
               <button class="gallery-nav right" id="scrollRightBtnRobots">&gt;</button>
             </div>
             <p class="figure-caption gallery-caption">
-              <b>Robot Manipulation:</b> Diverse manipulation tasks including cube stacking, rope and cloth handling, kitchen operations, conditional reasoning tasks, object cutting, desk organization, and long-horizon planning scenarios.
+              <b>Zero-shot Generation of front view Humanoid robots</b> in diverse environments, a novel front view, showcasing the model's ability to understand and predict complex interactions in dynamic settings.
             </p>
           </div>
         </div>
+      
+    <div class="tagline" id="physics-understanding">Physics Simulation.</div>
+    
+    <!-- Physics Videos Gallery -->
+    <div class="video-gallery-section" id="physicsGallerySection">
+      <div class="video-gallery-container">
+        <div class="video-gallery" id="videoGalleryPhysics">
+          <!-- <video class="gallery-video" src="./static/wow-videos/physics/light.mp4" autoplay muted playsinline loop></video> -->
+          <video class="gallery-video" src="./static/wow-videos/physics/counterfact_task1_part1.mp4" autoplay muted playsinline loop></video>
+          <video class="gallery-video" src="./static/wow-videos/physics/crush_rabbit.mp4" autoplay muted playsinline loop></video>
+          <video class="gallery-video" src="./static/wow-videos/physics/sticky_cube.mp4" autoplay muted playsinline loop></video>
+          <video class="gallery-video" src="./static/wow-videos/physics/three_cubes_fire_soft_water.mp4" autoplay muted playsinline loop></video>
+          <video class="gallery-video" src="./static/wow-videos/physics/counterfact_task1_part3.mp4" autoplay muted playsinline loop></video>
+          <!-- <video class="gallery-video" src="./static/wow-videos/physics/cube_splitting.mp4" autoplay muted playsinline loop></video>
+          <video class="gallery-video" src="./static/wow-videos/physics/cube_flower.mp4" autoplay muted playsinline loop></video>
+          <video class="gallery-video" src="./static/wow-videos/physics/cube_splitting2.mp4" autoplay muted playsinline loop></video> -->
+        </div>
+      </div>
+      <div class="gallery-caption-container">
+        <div class="gallery-nav-controls">
+          <button class="gallery-nav left" id="scrollLeftBtnPhysics">&lt;</button>
+          <button class="gallery-nav right" id="scrollRightBtnPhysics">&gt;</button>
+        </div>
+        <p class="figure-caption gallery-caption">
+          <b>Physics Simulation:</b> WoW demonstrates sophisticated understanding of physical properties including object splitting, deformation, lighting effects, adhesion, and counterfactual reasoning.
+        </p>
+      </div>
+    </div>
 
-        <div class="tagline" id="real-world-scenarios">Real-world Scenarios.</div>
         
-        <!-- Kitchen and Conditional Reasoning Videos -->
-        <div class="video-gallery-section" id="scenariosGallerySection">
+        <!-- Cubes Showcase Grid -->
+        <div class="tagline">counterfact Imagination</div>
+        <div class="video-grid-container">
+          <div class="video-grid">
+            <video class="grid-video" src="./static/wow-videos/cubes-future/45-degree.mp4" autoplay muted playsinline loop></video>
+            <video class="grid-video" src="./static/wow-videos/cubes-future/dumn.mp4" autoplay muted playsinline loop></video>
+            <video class="grid-video" src="./static/wow-videos/cubes-future/magnetic.mp4" autoplay muted playsinline loop></video>
+            <video class="grid-video" src="./static/wow-videos/cubes-future/water.mp4" autoplay muted playsinline loop></video>
+            <video class="grid-video" src="./static/wow-videos/cubes-future/alive.mp4" autoplay muted playsinline loop></video>
+            <video class="grid-video" src="./static/wow-videos/cubes-future/acidlemon.mp4" autoplay muted playsinline loop></video>
+            
+          </div>
+        </div>
+        <p class="figure-caption">
+          <b>counterfact Imagination:</b> Diverse counterfactual scenarios showcasing WoW's ability to imagine and generate physically plausible outcomes under altered conditions, such as different angles, magnetic properties, and energy effects.
+        </p>
+        
+        <div class="tagline" id="artistic-interaction">Long Horizon Tasks.</div>
+        
+        <!-- Long Horizon Videos -->
+        <div class="video-gallery-section" id="artGallerySection">
           <div class="video-gallery-container">
-            <div class="video-gallery" id="videoGalleryScenarios">
-              <video class="gallery-video" src="./static/wow-videos/robots/kitchen2.mp4" autoplay muted playsinline loop></video>
-              <video class="gallery-video" src="./static/wow-videos/robots/jobs2.mp4" autoplay muted playsinline loop></video>
+            <div class="video-gallery" id="videoGalleryArt">
+              <video class="gallery-video" src="./static/wow-videos/robots/stack_cups2_long-term.mp4" autoplay muted playsinline loop></video>
+              <video class="gallery-video" src="./static/wow-videos/robots/stack_cups_long-term.mp4" autoplay muted playsinline loop></video>
+              <!-- <video class="gallery-video" src="./static/wow-videos/life/pour2.mp4" autoplay muted playsinline loop></video>
+              <video class="gallery-video" src="./static/wow-videos/life/wujing.mp4" autoplay muted playsinline loop></video> -->
+            </div>
+          </div>
+          <div class="gallery-caption-container">
+            <div class="gallery-nav-controls">
+              <button class="gallery-nav left" id="scrollLeftBtnArt">&lt;</button>
+              <button class="gallery-nav right" id="scrollRightBtnArt">&gt;</button>
+            </div>
+            <p class="figure-caption gallery-caption">
+              <b>Long Horizon Tasks.</b> WoW excels in generating extended sequences of robot actions, demonstrating its capability to plan and execute complex tasks over longer time horizons with sustained physical consistency.
+            </p>
+          </div>
+        </div>
+        
+
+
+        <!-- Artistic Videos -->
+        <div class="video-gallery-section" id="artGallerySection">
+          <div class="video-gallery-container">
+            <div class="video-gallery" id="videoGalleryArt">
+              <video class="gallery-video" src="./static/wow-videos/art/Sunflower.mp4" autoplay muted playsinline loop></video>
+              <video class="gallery-video" src="./static/wow-videos/art/van_Gogh.mp4" autoplay muted playsinline loop></video>
               <video class="gallery-video" src="./static/wow-videos/life/pour2.mp4" autoplay muted playsinline loop></video>
               <video class="gallery-video" src="./static/wow-videos/life/wujing.mp4" autoplay muted playsinline loop></video>
             </div>
           </div>
           <div class="gallery-caption-container">
             <div class="gallery-nav-controls">
-              <button class="gallery-nav left" id="scrollLeftBtnScenarios">&lt;</button>
-              <button class="gallery-nav right" id="scrollRightBtnScenarios">&gt;</button>
+              <button class="gallery-nav left" id="scrollLeftBtnArt">&lt;</button>
+              <button class="gallery-nav right" id="scrollRightBtnArt">&gt;</button>
             </div>
             <p class="figure-caption gallery-caption">
-              <b>Real-world Scenarios:</b> Natural environments and daily life activities including kitchen scenes, workplace tasks, and everyday interactions demonstrating practical applicability.
+              <b>Artistic Interaction:</b> WoW demonstrates understanding of 2D-3D relationships by enabling robotic hands to extract objects from famous paintings, showcasing cross-modal reasoning between visual art and physical manipulation.
             </p>
           </div>
         </div>
-
-
-    <!-- Cubes Showcase Grid -->
-    <div class="tagline">Object Interactions and Dynamics.</div>
-    <div class="video-grid-container">
-      <div class="video-grid">
-        <video class="grid-video" src="./static/wow-videos/robots/stack_cups_long-term.mp4" autoplay muted playsinline loop></video>
-        <video class="grid-video" src="./static/wow-videos/robots/00000002-manipulate_cubes.mp4" autoplay muted playsinline loop></video>
-        <!-- <video class="grid-video" src="./static/wow-videos/cubes/00000106.mp4" autoplay muted playsinline loop></video> -->
-        <!-- <video class="grid-video" src="./static/wow-videos/cubes/00000123.mp4" autoplay muted playsinline loop></video> -->
-        <video class="grid-video" src="./static/wow-videos/cubes/00000143.mp4" autoplay muted playsinline loop></video>
-        <!-- <video class="grid-video" src="./static/wow-videos/cubes/00000150.mp4" autoplay muted playsinline loop></video> -->
-        <!-- <video class="grid-video" src="./static/wow-videos/cubes/00000158.mp4" autoplay muted playsinline loop></video> -->
-        <video class="grid-video" src="./static/wow-videos/cubes/00000023.mp4" autoplay muted playsinline loop></video>
-        <!-- <video class="grid-video" src="./static/wow-videos/cubes/00000034.mp4" autoplay muted playsinline loop></video> -->
-        <!-- <video class="grid-video" src="./static/wow-videos/cubes/00000048.mp4" autoplay muted playsinline loop></video> -->
-        <!-- <video class="grid-video" src="./static/wow-videos/cubes/00000071.mp4" autoplay muted playsinline loop></video> -->
-        <!-- <video class="grid-video" src="./static/wow-videos/cubes/00000082.mp4" autoplay muted playsinline loop></video> -->
-        <video class="grid-video" src="./static/wow-videos/cubes/00000095.mp4" autoplay muted playsinline loop></video>
-        <video class="grid-video" src="./static/wow-videos/cubes/00000099.mp4" autoplay muted playsinline loop></video>
-      </div>
-    </div>
-    <p class="figure-caption">
-      <b>Object Dynamics:</b> A diverse collection of cube interactions showcasing different physical behaviors, collision dynamics, and environmental responses.
-    </p>
-
-    <div class="tagline" id="artistic-interaction">Artistic Interaction.</div>
-
-  <!-- Artistic Videos -->
-  <div class="video-gallery-section" id="artGallerySection">
-    <div class="video-gallery-container">
-      <div class="video-gallery" id="videoGalleryArt">
-        <video class="gallery-video" src="./static/wow-videos/art/Sunflower.mp4" autoplay muted playsinline loop></video>
-        <video class="gallery-video" src="./static/wow-videos/art/van_Gogh.mp4" autoplay muted playsinline loop></video>
-      </div>
-    </div>
-    <div class="gallery-caption-container">
-      <div class="gallery-nav-controls">
-        <button class="gallery-nav left" id="scrollLeftBtnArt">&lt;</button>
-        <button class="gallery-nav right" id="scrollRightBtnArt">&gt;</button>
-      </div>
-      <p class="figure-caption gallery-caption">
-        <b>Artistic Interaction:</b> WoW demonstrates understanding of 2D-3D relationships by enabling robotic hands to extract objects from famous paintings, showcasing cross-modal reasoning between visual art and physical manipulation.
-      </p>
-    </div>
-  </div>
-
-    <div class="tagline" id="approach">Approach.</div>
-
-    <div class="r2s-vertical-layout">
-      <div class="r2s-video-row r2s-top-row">
-        <img class="r2s-video-item r2s-video-input" src="./static/images/WoW/method1.png" autoplay muted loop playsinline></img>
-      </div>
-      <div class="r2s-caption-row">
-        <p class="r2s-caption-item">Model Overview</p>
-      </div>
-      <p class="figure-caption">
-        <b>(a) Inference: a latent diffusion transformer predicts future frames from image observations and text-based action descriptions. (b) Training: DINO features supervise intermediate DiT representations via a token relation distillation loss to improve spatial-temporal modeling.</b>
-      </p>
-    </div>
-
-  <div class="tagline" id="approach">Experimental Results.</div>
-
-  <div class="r2s-vertical-layout">
-    <div class="r2s-video-row r2s-top-row">
-      <img class="r2s-video-item r2s-video-input" src="./static/images/1_Table.png"></img>
-    </div>
-    <div class="r2s-caption-row">
-      <p class="r2s-caption-item"><b>Scaling Law Comparison at Varying Data Scales.</b> Performance comparison across four different dataset sizes (30k, 200k, 600k, 2M samples) on multiple benchmarks, demonstrating clear improvements with increased training data following established neural scaling laws.</p>
-    </div>
-  </div>
-
-  <div class="r2s-vertical-layout">
-    <div class="r2s-video-row r2s-top-row">
-      <img class="r2s-video-item r2s-video-input" src="./static/images/2_Table.png" style="height: auto; max-height: none;"></img>
-    </div>
-    <div class="r2s-caption-row">
-      <p class="r2s-caption-item"><b>Comparative Analysis Across Video Generation Models.</b> Comprehensive evaluation of different models including CogVideoX, Cosmos-Predict, Wan2.1, and our proposed WoW across multiple metrics: Video Quality (VQ), Instruction Understanding (IU), Physical Law (PL), and Planning. Results show both human evaluation and autonomous evaluation scores, with WoW achieving superior performance across most dimensions.</p>
-    </div>
-  </div>
-
-  <style>
+        
+        <!-- <div class="tagline" id="approach">Approach.</div>
+        
+        <div class="r2s-vertical-layout">
+          <div class="r2s-video-row r2s-top-row">
+            <img class="r2s-video-item r2s-video-input" src="./static/images/WoW/method1.png" autoplay muted loop playsinline></img>
+          </div>
+          <div class="r2s-caption-row">
+            <p class="r2s-caption-item">Model Overview</p>
+          </div>
+          <p class="figure-caption">
+            <b>(a) Inference: a latent diffusion transformer predicts future frames from image observations and text-based action descriptions. (b) Training: DINO features supervise intermediate DiT representations via a token relation distillation loss to improve spatial-temporal modeling.</b>
+          </p>
+        </div> -->
+<!--         
+        <div class="tagline" id="approach">Experimental Results.</div>
+        
+        <div class="r2s-vertical-layout">
+          <div class="r2s-video-row r2s-top-row">
+            <img class="r2s-video-item r2s-video-input" src="./static/images/1_Table.png"></img>
+          </div>
+          <div class="r2s-caption-row">
+            <p class="r2s-caption-item"><b>Scaling Law Comparison at Varying Data Scales.</b> Performance comparison across four different dataset sizes (30k, 200k, 600k, 2M samples) on multiple benchmarks, demonstrating clear improvements with increased training data following established neural scaling laws.</p>
+          </div>
+        </div>
+        
+        <div class="r2s-vertical-layout">
+          <div class="r2s-video-row r2s-top-row">
+            <img class="r2s-video-item r2s-video-input" src="./static/images/2_Table.png" style="height: auto; max-height: none;"></img>
+          </div>
+          <div class="r2s-caption-row">
+            <p class="r2s-caption-item"><b>Comparative Analysis Across Video Generation Models.</b> Comprehensive evaluation of different models including CogVideoX, Cosmos-Predict, Wan2.1, and our proposed WoW across multiple metrics: Video Quality (VQ), Instruction Understanding (IU), Physical Law (PL), and Planning. Results show both human evaluation and autonomous evaluation scores, with WoW achieving superior performance across most dimensions.</p>
+          </div>
+        </div>
+         -->
+        <style>
   .r2s-video-item {
     width: 100%;
     height: auto !important;
@@ -271,9 +287,9 @@
   }
   </style>
 
-    <div class="bibtex-code">
-      <div class="bibtex-title">BibTeX</div>
-      <pre><code>@article{chi2025WoW,
+<div class="bibtex-code">
+  <div class="bibtex-title">BibTeX</div>
+  <pre><code>@article{chi2025WoW,
         author    = {Xiaowei Chi and Peidong Jia and Chun-Kai Fan and Xiaozhu Ju and Weishi Mi and Kevin Zhang and Zhiyuan Qin and Wanxin Tian and Kuangzhi Ge and Hao Li and Zezhong Qian and Qiang Zhou and Anthony Chen and Yong Dai and Jiaming Liu and Ying Li and Qingpo Wuwu and Yong Bao and Qiuxuan Feng and Kai Tang and Chengyu Bai and Lizhang Chen and Yulin Luo and Yueru Jia and Siyuan Zhou and Chi-Min Chan and Chengkai Hou and Wei Xue and Sirui Han and Yike Guo and Jiacheng Zhu and Shanghang Zhang and Jian Tang},
         title     = {WoW: Harnessing Intuitive Physics from a Scalable Embodied World Model},
         journal   = {arXiv preprint arXiv:xxxx.xxxxx},
