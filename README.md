@@ -5,7 +5,7 @@
 ## 📖 Paper
 
 **Wow: Harnessing Intuitive Physics from a Scalable Embodied World Model**  
-Xiaowei Chi, Peidong Jia, Chun-Kai Fan, Xiaozhu Ju, Weishi Mi, Kevin Zhang, Zhiyuan Qin, Wanxin Tian, Kuangzhi Ge, Hao Li, Zezhong Qian, Qiang Zhou, Anthony Chen, Yong Dai, Jiaming Liu, Ying Li, Qingpo Wuwu, Yong Bao, Qiuxuan Feng, Kai Tang *et al.*  
+Xiaowei Chi, Peidong Jia, Chun-Kai Fan, Xiaozhu Ju, Weishi Mi, Zhiyuan Qin, Kevin Zhang, Wanxin Tian, Kuangzhi Ge, Hao Li, Zezhong Qian, Qiang Zhou, Anthony Chen, Yong Dai, Jiaming Liu, Ying Li, Qingpo Wuwu, Yong Bao, Qiuxuan Feng, Kai Tang *et al.*  
 
 ![Wow Teaser](./figs/teaser.png)
 
